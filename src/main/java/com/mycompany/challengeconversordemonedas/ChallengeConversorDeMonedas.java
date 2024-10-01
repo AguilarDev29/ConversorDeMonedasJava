@@ -15,11 +15,13 @@ public class ChallengeConversorDeMonedas {
         List<Datos> listaDatos = new ArrayList();
          
         
-        String json = Conexion.conexion();
+        //String json = Conexion.conexion();
         
         //System.out.println(json);
         Datos datos = Convertidor.convertirDesdeJson();
         System.out.println(datos);
+        listaDatos.add(datos);
         
+        Convertidor.archivoJson(listaDatos);
     }
 }

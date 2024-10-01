@@ -31,12 +31,12 @@ public class Convertidor {
     }
     
     
-    /*public static void archivoJson(List<Datos> datos) throws IOException{
-        Datos json = convertirDesdeJson(datos);
+    public static void archivoJson(List<Datos> datos) throws IOException{
         Gson gson = instanciaGsonConfigurada();
-        BufferedWriter bw = new BufferedWriter(new FileWriter("archivo.json", true));
-        bw.write(gson.toJson(json));
-        bw.newLine();
-        bw.close();
-    }*/
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter("archivo.json", true))){
+            bw.write(gson.toJson(datos));
+            bw.newLine();
+        }
+        
+    }
 }
