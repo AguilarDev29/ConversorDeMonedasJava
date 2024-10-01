@@ -19,11 +19,11 @@ public class Convertidor {
                 .setPrettyPrinting().create();
         return gson;
     }
-    public static Datos convertirDesdeJson(){
+    public static Datos convertirDesdeJson(Monedas moneda1, Monedas moneda2,double monto){
         Gson gson = instanciaGsonConfigurada();
         Datos datos = null;
         try {
-            datos = gson.fromJson(Conexion.conexion(), Datos.class);
+            datos = gson.fromJson(Conexion.conexion(moneda1, moneda2, monto), Datos.class);
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(Convertidor.class.getName()).log(Level.SEVERE, null, ex);
         }
