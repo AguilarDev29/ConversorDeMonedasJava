@@ -9,8 +9,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-
+import java.time.LocalTime;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 public class Convertidor {
     
     private static Gson instanciaGsonConfigurada(){
@@ -38,5 +39,12 @@ public class Convertidor {
             bw.newLine();
         }
         
+    }
+    
+    public static void historialConsultas(String texto) throws IOException{
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter("log.txt", true))){
+            bw.write(texto + "  -  " + LocalDate.now() + "  " + LocalTime.now());
+            bw.newLine();
+        }
     }
 }

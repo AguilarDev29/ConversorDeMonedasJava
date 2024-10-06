@@ -11,10 +11,12 @@ public class Interfaz {
     public static void menu() throws IOException, InterruptedException{
         List<Datos> listaDatos = new ArrayList();
         Datos datos;
-        int opc;
+        int opc = 0;
         double monto;
+        String texto;
         Scanner sc = new Scanner(System.in);
         System.out.println("""
+                           *******************************************
                                      Conversor de monedas
                            
                             1. Dolar ===> Peso argentino
@@ -29,92 +31,137 @@ public class Interfaz {
                            10. Boliviano boliviano ===> Dolar
                             0. Salir
                            
+                           *******************************************
                            """);
-        
-        System.out.print("Ingrese el codigo de su moneda: ");
+        try{
+        System.out.print("Ingrese una opcion: ");
         opc = sc.nextInt();
-
-        
+        System.out.print("\033[H\033[2J"); 
+        }catch(InputMismatchException e){
+        System.out.println("Ingrese una opcion valida\n");
+            menu();
+        }
         switch (opc) {
             case 1 -> {
+                
                 System.out.print("Ingrese el monto a consultar: ");
                 monto = sc.nextDouble();
                 datos = Convertidor.convertirDesdeJson(Monedas.USD, Monedas.ARS, monto);
-                System.out.println(datos);
                 listaDatos.add(datos);
-                
+                System.out.println("*******************************************");
+                System.out.println("\t$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]");
+                System.out.println("*******************************************");
+                texto = "$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]";
+                Convertidor.historialConsultas(texto);
                 menu();
             }
             case 2 -> {
                 System.out.print("Ingrese el monto a consultar: ");
                 monto = sc.nextDouble();
                 datos = Convertidor.convertirDesdeJson(Monedas.ARS, Monedas.USD, monto);
-                System.out.println(datos);
                 listaDatos.add(datos);
+                System.out.println("*******************************************");
+                System.out.println("$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]");
+                System.out.println("*******************************************");
+                texto = "$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]";
+                Convertidor.historialConsultas(texto);
                 menu();
             }
             case 3 -> {
                 System.out.print("Ingrese el monto a consultar: ");
                 monto = sc.nextDouble();
                 datos = Convertidor.convertirDesdeJson(Monedas.USD, Monedas.BRL, monto);
-                System.out.println(datos);
                 listaDatos.add(datos);
+                System.out.println("*******************************************");
+                System.out.println("$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]");
+                System.out.println("*******************************************");
+                texto = "$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]";
+                Convertidor.historialConsultas(texto);
                 menu();
             }
             case 4 -> {
                 System.out.print("Ingrese el monto a consultar: ");
                 monto = sc.nextDouble();
                 datos = Convertidor.convertirDesdeJson(Monedas.BRL, Monedas.USD, monto);
-                System.out.println(datos);
                 listaDatos.add(datos);
+                System.out.println("*******************************************");
+                System.out.println("$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]");
+                System.out.println("*******************************************");
+                texto = "$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]";
+                Convertidor.historialConsultas(texto);
                 menu();
             }
             case 5 -> {
                 System.out.print("Ingrese el monto a consultar: ");
                 monto = sc.nextDouble();
                 datos = Convertidor.convertirDesdeJson(Monedas.USD, Monedas.CLP, monto);
-                System.out.println(datos);
                 listaDatos.add(datos);
+                System.out.println("*******************************************");
+                System.out.println("$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]");
+                System.out.println("*******************************************");
+                texto = "$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]";
+                Convertidor.historialConsultas(texto);
                 menu();
             }
             case 6 -> {
                 System.out.print("Ingrese el monto a consultar: ");
                 monto = sc.nextDouble();
                 datos = Convertidor.convertirDesdeJson(Monedas.CLP, Monedas.USD, monto);
-                System.out.println(datos);
                 listaDatos.add(datos);
+                System.out.println("*******************************************");
+                System.out.println("$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]");
+                System.out.println("*******************************************");
+                texto = "$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]";
+                Convertidor.historialConsultas(texto);
                 menu();
             }
             case 7 -> {
                 System.out.print("Ingrese el monto a consultar: ");
                 monto = sc.nextDouble();
                 datos = Convertidor.convertirDesdeJson(Monedas.USD, Monedas.COP, monto);
-                System.out.println(datos);
                 listaDatos.add(datos);
+                System.out.println("*******************************************");
+                System.out.println("$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]");
+                System.out.println("*******************************************");
+                texto = "$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]";
+                Convertidor.historialConsultas(texto);
                 menu();
             }
             case 8 -> {
                 System.out.print("Ingrese el monto a consultar: ");
                 monto = sc.nextDouble();
                 datos = Convertidor.convertirDesdeJson(Monedas.COP, Monedas.USD, monto);
-                System.out.println(datos);
                 listaDatos.add(datos);
+                System.out.println("*******************************************");
+                System.out.println("$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]");
+                System.out.println("*******************************************");
+                texto = "$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]";
+                Convertidor.historialConsultas(texto);
                 menu();
             }
             case 9 -> {
                 System.out.print("Ingrese el monto a consultar: ");
                 monto = sc.nextDouble();
                 datos = Convertidor.convertirDesdeJson(Monedas.USD, Monedas.BOB, monto);
-                System.out.println(datos);
                 listaDatos.add(datos);
+                System.out.println("*******************************************");
+                
+                System.out.println("$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]");
+                System.out.println("*******************************************");
+                texto = "$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]";
+                Convertidor.historialConsultas(texto);
                 menu();
             }
             case 10 -> {
                 System.out.print("Ingrese el monto a consultar: ");
                 monto = sc.nextDouble();
                 datos = Convertidor.convertirDesdeJson(Monedas.BOB, Monedas.USD, monto);
-                System.out.println(datos);
                 listaDatos.add(datos);
+                System.out.println("*******************************************");
+                System.out.println("$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]");
+                System.out.println("*******************************************");
+                texto = "$" + monto + "[" + datos.baseCode() + "]" + " = $" + datos.conversionResult() + "[" + datos.targetCode() + "]";
+                Convertidor.historialConsultas(texto);
                 menu();
             }
             case 0 -> System.out.println("Saliendo...");
