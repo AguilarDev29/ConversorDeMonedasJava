@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 
 public class Interfaz {
-    public static void menu() throws IOException, InterruptedException{
+    /*public static void menu() throws IOException, InterruptedException{
         List<Datos> listaDatos = new ArrayList();
         Datos datos;
         int opc = 0;
@@ -36,7 +36,6 @@ public class Interfaz {
         try{
         System.out.print("Ingrese una opcion: ");
         opc = sc.nextInt();
-        System.out.print("\033[H\033[2J"); 
         }catch(InputMismatchException e){
         System.out.println("Ingrese una opcion valida\n");
             menu();
@@ -172,5 +171,5 @@ public class Interfaz {
         }
         Convertidor.archivoJson(listaDatos);
     }
-      
+      */
 }

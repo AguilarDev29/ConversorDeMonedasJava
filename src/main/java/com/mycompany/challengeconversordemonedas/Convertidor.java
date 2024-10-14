@@ -20,11 +20,11 @@ public class Convertidor {
                 .setPrettyPrinting().create();
         return gson;
     }
-    public static Datos convertirDesdeJson(Monedas moneda1, Monedas moneda2,double monto){
+    public static Datos convertirDesdeJson(String moneda1, String moneda2,double monto){
         Gson gson = instanciaGsonConfigurada();
         Datos datos = null;
         try {
-            datos = gson.fromJson(Conexion.conexion(moneda1, moneda2, monto), Datos.class);
+            datos = gson.fromJson(Conexion.conexion(extraerCodigo(moneda1), extraerCodigo(moneda2), monto), Datos.class);
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(Convertidor.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -46,5 +46,9 @@ public class Convertidor {
             bw.write(texto + "  -  " + LocalDate.now() + "  " + LocalTime.now());
             bw.newLine();
         }
+    }
+    
+    public static String extraerCodigo(String texto){
+        return texto.substring(texto.length() - 3);
     }
 }
