@@ -1,5 +1,6 @@
 package com.mycompany.challengeconversordemonedas;
 
+import java.awt.Color;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,90 +25,79 @@ public class GUI extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
+        jPanel1.setBackground(new java.awt.Color(153, 255, 102));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnConversion.setBackground(new java.awt.Color(51, 51, 51));
+        btnConversion.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        btnConversion.setForeground(new java.awt.Color(255, 255, 255));
         btnConversion.setText("Convertir");
         btnConversion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConversionActionPerformed(evt);
             }
         });
+        jPanel1.add(btnConversion, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 110, 50));
 
+        cbDivisa1.setBackground(new java.awt.Color(204, 255, 204));
+        cbDivisa1.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        cbDivisa1.setForeground(new java.awt.Color(0, 0, 0));
         cbDivisa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dólar estadounidense - USD", "Euro - EUR", "Yen japonés - JPY", "Libra esterlina - GBP", "Dólar australiano - AUD", "Dólar canadiense - CAD", "Franco suizo - CHF   ", "Yuan chino - CNY", "Peso Mexicano - MXN", "Real Brasileño - BRL", "Peso Argentino - ARS", "Peso Chileno - CLP", "Peso Colombiano - COP", "Sol Peruano - PEN", "Peso Uruguayo - UYU", "Bolívar Soberano - VEF", "Córdoba Oro Nicaragüense - NIO" }));
         cbDivisa1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbDivisa1ActionPerformed(evt);
             }
         });
+        jPanel1.add(cbDivisa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 240, 40));
 
+        cbDivisa2.setBackground(new java.awt.Color(204, 255, 204));
+        cbDivisa2.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        cbDivisa2.setForeground(new java.awt.Color(0, 0, 0));
         cbDivisa2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dólar estadounidense - USD", "Euro - EUR", "Yen japonés - JPY", "Libra esterlina - GBP", "Dólar australiano - AUD", "Dólar canadiense - CAD", "Franco suizo - CHF   ", "Yuan chino - CNY", "Peso Mexicano - MXN", "Real Brasileño - BRL", "Peso Argentino - ARS", "Peso Chileno - CLP", "Peso Colombiano - COP", "Sol Peruano - PEN", "Peso Uruguayo - UYU", "Bolívar Soberano - VEF", "Córdoba Oro Nicaragüense - NIO" }));
+        jPanel1.add(cbDivisa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 240, 40));
 
+        txtMonto1.setBackground(new java.awt.Color(204, 255, 204));
+        txtMonto1.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        txtMonto1.setForeground(new java.awt.Color(0, 0, 0));
+        txtMonto1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jPanel1.add(txtMonto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 190, 40));
+
+        txtMonto2.setBackground(new java.awt.Color(204, 255, 204));
+        txtMonto2.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        txtMonto2.setForeground(new java.awt.Color(0, 0, 0));
+        txtMonto2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtMonto2.setEnabled(false);
         txtMonto2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMonto2ActionPerformed(evt);
             }
         });
+        jPanel1.add(txtMonto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 190, 40));
 
+        btnInvertir.setBackground(new java.awt.Color(51, 51, 51));
+        btnInvertir.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        btnInvertir.setForeground(new java.awt.Color(255, 255, 255));
         btnInvertir.setText("Invertir");
         btnInvertir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInvertirActionPerformed(evt);
             }
         });
+        jPanel1.add(btnInvertir, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 110, 50));
 
+        btnSalir.setBackground(new java.awt.Color(51, 51, 51));
+        btnSalir.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(153, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtMonto1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(208, 208, 208))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnSalir)
-                        .addGap(15, 15, 15))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtMonto2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(208, 208, 208))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cbDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(160, 160, 160))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnInvertir)
-                        .addGap(66, 66, 66)
-                        .addComponent(btnConversion, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(152, 152, 152))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(txtMonto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(cbDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnConversion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addComponent(cbDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtMonto2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSalir)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 80, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,6 +116,14 @@ public class GUI extends javax.swing.JFrame {
     private void cbDivisa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbDivisa1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbDivisa1ActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void txtMonto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMonto2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMonto2ActionPerformed
 
     private void btnConversionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConversionActionPerformed
         Datos datos;
@@ -174,45 +172,10 @@ public class GUI extends javax.swing.JFrame {
             txtMonto1.setText(null);
             txtMonto2.setText(null);
         }
-        
+
     }//GEN-LAST:event_btnInvertirActionPerformed
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        dispose();
-    }//GEN-LAST:event_btnSalirActionPerformed
-
-    private void txtMonto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMonto2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMonto2ActionPerformed
-
-    public static void main(String args[]) {
-
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        java.awt.EventQueue.invokeLater(() -> {
-            new GUI().setVisible(true);
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConversion;
