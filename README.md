@@ -4,7 +4,6 @@
 
 <p>Este proyecto es una aplicación de consola simple que permite convertir entre diferentes monedas utilizando las tasas de cambio proporcionadas por la API de ExchangeRate.
   Los usuarios pueden ingresar una cantidad en una moneda específica y obtener el equivalente en otra moneda.
-  Actualmente el proyecto se encuentra en la Version 1, por lo cual seguiremo trabajando para en un futuro migrar a otra interfaz grafica y ampliar las opciones de divisas a consultar
 </p>
 
   <h3>Caracteristicas</h3>
@@ -15,3 +14,11 @@
 		<li>Código limpio y bien estructurado: El código es fácil de leer y mantener, siguiendo buenas prácticas de programación.</li>
     <li>Historial de consultas: Cada consulta que se realice será guardada en un archivo con la fecha y hora exactas.</li>
   </ul>
+<h3>Cambios en esta versión:</h3>
+  <ul>
+    <li>Nueva funcionalidad: Se ha agregado una interfaz gráfica para mejorar la experiencia del usuario.</li>  
+    <li>Historial de consultas: Se mantiene la funcionalidad de guardar un historial de las consultas realizadas.</li>
+  </ul>
+
+
+
